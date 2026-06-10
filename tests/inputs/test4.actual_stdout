@@ -1,0 +1,13 @@
+Input Disorder: 0.50
+
+	-- BUBBLE SORT --
+Sorted Disorder: 0.00
+Number of operations: 13
+
+Sorted List: -2147483648 24 42 100 2147483647 
+
+	-- INSERTION SORT --
+Sorted Disorder: 0.00
+Number of operations: 12
+
+Sorted List: -2147483648 24 42 100 2147483647 
