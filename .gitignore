@@ -1,0 +1,6 @@
+args.txt
+
+*.o
+
+push_swap
+libft/libft.a
