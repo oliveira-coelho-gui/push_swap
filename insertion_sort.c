@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 08:21:01 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/10 13:08:00 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:54:02 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	insertion(t_dlist **a, t_dlist **b)
 	operation_count = 0;
 	while (compute_disorder(*a) > 0.00001f)
 	{
-		while(*a)
+		while (*a)
 		{
 			if (!*b)
 				operation_count += push(b, a);

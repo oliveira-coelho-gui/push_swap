@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:06:32 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/10 11:59:46 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:56:59 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,19 @@
 	 */
 
 // excluir
+
 #include <stdio.h>
-static void test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, t_dlist **));
+
+static void	test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, \
+			t_dlist **));
+
 // excluir
+
 int	main(int argc, char **argv)
 {
-	t_stack a;
+	t_stack	a;
 	t_dlist	*a_cpy;
-	t_stack b;
+	t_stack	b;
 	t_opt	op;
 
 	if (argc == 1 || !validate_store_input(argv, &op, &a.head))
@@ -70,15 +75,17 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-static void test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, t_dlist **))
+static void	test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, \
+			t_dlist **))
 {
 	size_t	operations_count;
 	float	disorder;
-	t_dlist *tmp;
+	t_dlist	*tmp;
 
 	operations_count = f(a, b);
 	disorder = compute_disorder(*a);
-	printf("Sorted Disorder: %.2f\nNumber of operations: %zu\n\n", disorder, operations_count);
+	printf("Sorted Disorder: %.2f\nNumber of operations: %zu\n\n", \
+			disorder, operations_count);
 	printf("Sorted List: ");
 
 	tmp = *a;

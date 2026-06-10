@@ -59,7 +59,7 @@ swap: test_swap swap2
 	@rm tests/operations/swap/test_swap.o
 tests/operations/swap/test_swap.o: tests/operations/swap/test_swap.c
 	@$(CC) $(CFLAGS) $(SANITIZE) -c $<  $(INCLUDES) -lft -o $@
-test_swap: tests/operations/swap/test_swap.o validate_integer_input.o validate_input.o operations1.o operations2.o
+test_swap: tests/operations/swap/test_swap.o validate_integer_input.o validate_input.o operations1.o operations2.o call_backs.o
 	@$(CC) $(SANITIZE) $^ -L./$(LIBFT_DIR) -lft -o $@
 swap2: test_swap2
 	@./tests/test_swap2.sh
@@ -67,7 +67,8 @@ swap2: test_swap2
 	@rm tests/operations/swap/test_swap2.o
 tests/operations/swap/test_swap2.o: tests/operations/swap/test_swap2.c
 	@$(CC) $(CFLAGS) $(SANITIZE) -c $<  $(INCLUDES) -lft -o $@
-test_swap2: tests/operations/swap/test_swap2.o validate_integer_input.o validate_input.o operations1.o operations2.o
+test_swap2: tests/operations/swap/test_swap2.o validate_integer_input.o validate_input.o operations1.o operations2.o call_backs.o
+
 	@$(CC) $(SANITIZE) $^ -L./$(LIBFT_DIR) -lft -o $@
 
 push: test_push
@@ -76,7 +77,7 @@ push: test_push
 	@rm tests/operations/push/test_push.o
 tests/operations/push/test_push.o: tests/operations/push/test_push.c
 	@$(CC) $(CFLAGS) $(SANITIZE) -c $<  $(INCLUDES) -lft -o $@
-test_push: tests/operations/push/test_push.o validate_integer_input.o validate_input.o operations1.o operations2.o
+test_push: tests/operations/push/test_push.o validate_integer_input.o validate_input.o operations1.o operations2.o call_backs.o
 	@$(CC) $(SANITIZE) $^ -L./$(LIBFT_DIR) -lft -o $@
 
 rotate: test_rotate
@@ -85,7 +86,7 @@ rotate: test_rotate
 	@rm tests/operations/rotate/test_rotate.o
 tests/operations/rotate/test_rotate.o: tests/operations/rotate/test_rotate.c
 	@$(CC) $(CFLAGS) $(SANITIZE) -c $<  $(INCLUDES) -lft -o $@
-test_rotate: tests/operations/rotate/test_rotate.o validate_integer_input.o validate_input.o operations1.o operations2.o
+test_rotate: tests/operations/rotate/test_rotate.o validate_integer_input.o validate_input.o operations1.o operations2.o call_backs.o
 	@$(CC) $(SANITIZE) $^ -L./$(LIBFT_DIR) -lft -o $@
 
 reverse_rotate: test_reverse_rotate
@@ -94,7 +95,7 @@ reverse_rotate: test_reverse_rotate
 	@rm tests/operations/reverse_rotate/test_reverse_rotate.o
 tests/operations/reverse_rotate/test_reverse_rotate.o: tests/operations/reverse_rotate/test_reverse_rotate.c
 	@$(CC) $(CFLAGS) $(SANITIZE) -c $<  $(INCLUDES) -lft -o $@
-test_reverse_rotate: tests/operations/reverse_rotate/test_reverse_rotate.o validate_integer_input.o validate_input.o operations1.o operations2.o
+test_reverse_rotate: tests/operations/reverse_rotate/test_reverse_rotate.o validate_integer_input.o validate_input.o operations1.o operations2.o call_backs.o
 	@$(CC) $(SANITIZE) $^ -L./$(LIBFT_DIR) -lft -o $@
 
 .PHONY: all clean fclean re t rt norminette swap swap2 push rotate

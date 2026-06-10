@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 18:04:50 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/10 11:02:32 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/10 14:53:41 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ float	compute_disorder(t_dlist *lst)
 	}
 	if (!total_pairs)
 		return (0);
-	return (mistakes * 1.0) / total_pairs;
+	return ((mistakes * 1.0) / total_pairs);
 }
