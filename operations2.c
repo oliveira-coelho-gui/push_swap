@@ -1,0 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations2.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/04 07:30:18 by gucoelho          #+#    #+#             */
+/*   Updated: 2026/06/09 20:06:05 by gucoelho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+int	rotate(t_dlist **dlst)
+{
+	t_dlist	*first;
+
+	if (*dlst && (*dlst)->next)
+	{
+		first = ft_dlist_pop(dlst);
+		ft_dlist_push_back_elem(dlst, first);
+	}
+	return (1);
+}
+
+int	rotate_both(t_dlist **dlst1, t_dlist **dlst2)
+{
+	rotate(dlst1);
+	rotate(dlst2);
+	return (1);
+}
+
+int	reverse_rotate(t_dlist **dlst)
+{
+	t_dlist	*last;
+
+	if (*dlst && (*dlst)->next)
+	{
+		last = ft_dlist_pop_end(dlst);
+		ft_dlist_push_front_elem(dlst, last);
+	}
+	return (1);
+}
+
+int	reverse_rotate_both(t_dlist **dlst1, t_dlist **dlst2)
+{
+	reverse_rotate(dlst1);
+	reverse_rotate(dlst2);
+	return (1);
+}
