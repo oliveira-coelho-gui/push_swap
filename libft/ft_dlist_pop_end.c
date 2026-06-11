@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 07:15:49 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/09 17:45:40 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 14:18:35 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ t_dlist	*ft_dlist_pop_end(t_dlist **dlst)
 {
 	t_dlist	*end;
 
+	end = NULL;
 	if (*dlst)
 	{
 		if ((*dlst)->next)

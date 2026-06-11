@@ -5,3 +5,4 @@ args.txt
 push_swap
 libft/libft.a
 **/*actual*
+**/*.swp

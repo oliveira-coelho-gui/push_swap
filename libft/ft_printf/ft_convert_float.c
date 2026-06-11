@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 08:05:38 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 08:56:58 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 14:19:57 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	convert_f(va_list args)
 
 	counter = 0;
 	x = va_arg(args, double);
-	if (x > INT_MAX || x < INT_MIN)
+	if ((long)x > INT_MAX || (long)x < INT_MIN)
 		return (FAIL);
 	n = (int) x;
 	str_nbr = ft_itoa(n);
