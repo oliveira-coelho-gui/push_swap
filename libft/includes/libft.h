@@ -6,7 +6,7 @@
 /*   By: gucoelho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:40:57 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/10 11:33:02 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:09:23 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h> // malloc(), free(), size_t, NULL
 # include <unistd.h> // write()
 
+# include "ft_printf_bonus.h"
 
 # ifndef INT_MAX
 #  define INT_MAX 2147483647
@@ -24,6 +25,8 @@
 # ifndef INT_MIN
 #  define INT_MIN -2147483648
 # endif
+
+typedef unsigned char	*t_byte_ptr; // used in ft_memmove()
 
 // type definition for the use of linked lists
 typedef struct s_list

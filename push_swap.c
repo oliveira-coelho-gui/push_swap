@@ -6,12 +6,14 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:06:32 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/10 14:56:59 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:07:02 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// excluir
+//
 	/* DONE
 	 * 	VALIDATE INTEGER FROM INPUT: OK
 	 * 	VALIDATE STRATEGY SELECTOR / BENCHMARK MODE FROM INPUT (--options) OK
@@ -34,9 +36,6 @@
 	 *
 	 */
 
-// excluir
-
-#include <stdio.h>
 
 static void	test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, \
 			t_dlist **));
@@ -59,14 +58,14 @@ int	main(int argc, char **argv)
 	b.size = 0;
 
 	float	disorder = compute_disorder(a.head);
-	printf("Input Disorder: %.2f\n\n", disorder);
+	ft_printf("Input Disorder: %f\n\n", disorder);
 
-	printf("\t-- BUBBLE SORT --\n");
+	ft_printf("\t-- BUBBLE SORT --\n");
 	a_cpy = ft_dlist_dup(a.head);
 	test_sorting(&a.head, &b.head, &bubble);
 	ft_dlist_clear(&a.head, &free);
 
-	printf("\n\t-- INSERTION SORT --\n");
+	ft_printf("\n\t-- INSERTION SORT --\n");
 	a.head = ft_dlist_dup(a_cpy);
 	test_sorting(&a.head, &b.head, &insertion);
 	ft_dlist_clear(&a_cpy, &free);
@@ -84,15 +83,15 @@ static void	test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, \
 
 	operations_count = f(a, b);
 	disorder = compute_disorder(*a);
-	printf("Sorted Disorder: %.2f\nNumber of operations: %zu\n\n", \
-			disorder, operations_count);
-	printf("Sorted List: ");
+	ft_printf("Sorted Disorder: %f\nNumber of operations: %d\n\n", \
+			disorder, (int)operations_count);
+	ft_printf("Sorted List: ");
 
 	tmp = *a;
 	while (tmp)
 	{
-		printf("%i ", *((int *)tmp->data));
+		ft_printf("%i ", *((int *)tmp->data));
 		tmp = tmp->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 }

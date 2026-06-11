@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:40:23 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/08 09:40:07 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:00:50 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 #  define DECIMALBASE "0123456789"
 # endif
 
-# ifndef UNSET
-#  define  UNSET -1
+# ifndef EMPTY
+#  define  EMPTY -1
 # endif
 
 # ifndef TRUE
@@ -66,6 +66,7 @@ int		convert_p(t_printf_info *info, va_list args);
 int		convert_di(t_printf_info *info, va_list args);
 int		convert_u(t_printf_info *info, va_list args);
 int		convert_x(t_printf_info *info, va_list args);
+int		convert_f(va_list args);
 int		ft_putnbr_base(unsigned long int nbr, char *base);
 char	*ft_litoa_base(unsigned long int nbr, char *base);
 char	*get_precision_diu(t_printf_info *info, char **str);

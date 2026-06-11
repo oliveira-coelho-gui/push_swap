@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:28:48 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/10 10:27:07 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 09:58:12 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 typedef enum e_option
 {
-	UNSET,
+	UNSET = -1,
 	SIMPLE,
 	MEDIUM,
 	COMPLEX,

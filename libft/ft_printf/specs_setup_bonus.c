@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:34:55 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/08 10:09:24 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:04:58 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	init_specification_info(t_printf_info *info)
 	info->left = FALSE;
 	info->showsign = FALSE;
 	info->pad = ' ';
-	info->width = UNSET;
-	info->prec = UNSET;
+	info->width = EMPTY;
+	info->prec = EMPTY;
 	info->spec = '\0';
 }
 
@@ -41,14 +41,14 @@ int	setup_specification_info(const char **format, int *counter, \
 	if (info->width > INT_MAX || info->prec > INT_MAX)
 		return (FAIL);
 	info->spec = **format;
-	if (!ft_strchr("cspdiuxX%", info->spec))
+	if (!ft_strchr("cspdifuxX%", info->spec))
 		return (FAIL);
 	if (info->spec == 'c' || info->spec == 's')
 		info->pad = ' ';
 	if (info->spec == '%')
 	{
-		info->width = UNSET;
-		info->prec = UNSET;
+		info->width = EMPTY;
+		info->prec = EMPTY;
 	}
 	return (*counter);
 }

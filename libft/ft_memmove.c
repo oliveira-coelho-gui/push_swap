@@ -5,20 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 11:29:28 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/05 11:29:28 by gucoelho         ###   ########.fr       */
+/*   Created: 2026/05/16 16:27:31 by gucoelho          #+#    #+#             */
+/*   Updated: 2026/06/11 10:11:06 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h" // size_t
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (n == 0)
-		return (dest);
-	if (src > dest)
-		return (ft_memcpy(dest, src, n));
-	while (n-- > 0)
-		((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
+	size_t			j;
+	unsigned char	tmp;
+
+	j = 0;
+	if ((dest > src && (size_t)(dest - src) < n))
+	{
+		while (j < n)
+		{
+			tmp = ((t_byte_ptr)dest)[j];
+			((t_byte_ptr)dest)[j] = ((t_byte_ptr)src)[0];
+			((t_byte_ptr)src)[0] = tmp;
+			j++;
+		}
+	}
+	else
+	{
+		while (j < n)
+		{
+			((t_byte_ptr)dest)[j] = ((t_byte_ptr)src)[j];
+			j++;
+		}
+	}
 	return (dest);
 }

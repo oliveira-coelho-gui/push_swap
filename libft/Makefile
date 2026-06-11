@@ -6,7 +6,7 @@
 #    By: gucoelho <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/17 17:17:55 by gucoelho          #+#    #+#              #
-#    Updated: 2026/06/10 11:21:12 by gucoelho         ###   ########.fr        #
+#    Updated: 2026/06/11 09:48:15 by gucoelho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ FT_PRINTF_FILES	:= ft_printf_bonus.c\
 				   ft_convert_char_and_str_bonus.c\
 				   ft_convert_pointer_bonus.c\
 				   ft_convert_base_bonus.c\
+				   ft_convert_float.c\
 				   precision_bonus.c\
 				   width_bonus.c
 FT_PRINTF_SRC	:= $(addprefix $(FT_PRINTF_DIR)/,$(FT_PRINTF_FILES))

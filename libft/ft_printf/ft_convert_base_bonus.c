@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:33:27 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/08 11:45:36 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:02:18 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	convert_x(t_printf_info *info, va_list args)
 
 static int	prefix_and_width(unsigned int nbr, char **str, t_printf_info *info)
 {
-	if (info->alt && !info->left && info->pad == '0' && info->width != UNSET)
+	if (info->alt && !info->left && info->pad == '0' && info->width != EMPTY)
 	{
 		info->width -= 2;
 		if (!get_width(info, str))

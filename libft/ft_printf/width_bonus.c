@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 15:35:01 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/08 11:44:04 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:01:59 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*add_sign(char **str, t_printf_info *info, int negative);
 
 char	*get_width(t_printf_info *info, char **str)
 {
-	if (info->width == UNSET)
+	if (info->width == EMPTY)
 		return (*str);
 	if (info->left)
 		*str = left_justify(info, str);
@@ -53,7 +53,7 @@ static char	*right_justify(t_printf_info *info, char **str)
 	int		negative;
 
 	move_sign = FALSE;
-	if (info->prec == UNSET && (**str == '-' || info->showsign || info->space) \
+	if (info->prec == EMPTY && (**str == '-' || info->showsign || info->space) \
 			&& info->pad == '0' && (info->spec == 'd' || info->spec == 'i'))
 		move_sign = TRUE;
 	pad = get_padding(*str, info);

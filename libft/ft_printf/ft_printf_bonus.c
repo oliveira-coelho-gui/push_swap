@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 14:01:17 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/07 19:21:18 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:05:43 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ static int	converter(const char **format, va_list args, int *counter)
 		conversion_return = convert_di(&info, args);
 	else if (info.spec == 'u')
 		conversion_return = convert_u(&info, args);
+	else if (info.spec == 'f')
+		conversion_return = convert_f(args);
 	else
 		conversion_return = convert_x(&info, args);
 	if (conversion_return == FAIL)
