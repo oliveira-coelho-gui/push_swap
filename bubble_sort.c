@@ -6,14 +6,16 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 19:24:09 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 17:36:32 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 19:54:08 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t	regular_bubble(t_dlist **a, t_dlist **b, size_t size, size_t *i);
-static size_t	reverse_bubble(t_dlist **a, t_dlist **b, size_t size, size_t *i);
+static size_t	regular_bubble(t_dlist **a, t_dlist **b, \
+		size_t size, size_t *i);
+static size_t	reverse_bubble(t_dlist **a, t_dlist **b, \
+		size_t size, size_t *i);
 
 size_t	bubble(t_dlist **a, t_dlist **b)
 {
@@ -32,7 +34,8 @@ size_t	bubble(t_dlist **a, t_dlist **b)
 	return (operation_count);
 }
 
-static size_t	regular_bubble(t_dlist **a, t_dlist **b, size_t size, size_t *i)
+static size_t	regular_bubble(t_dlist **a, t_dlist **b, \
+		size_t size, size_t *i)
 {
 	size_t	operation_count;
 	size_t	iter;
@@ -56,7 +59,8 @@ static size_t	regular_bubble(t_dlist **a, t_dlist **b, size_t size, size_t *i)
 	return (operation_count);
 }
 
-static size_t	reverse_bubble(t_dlist **a, t_dlist **b, size_t size, size_t *i)
+static size_t	reverse_bubble(t_dlist **a, t_dlist **b, \
+		size_t size, size_t *i)
 {
 	size_t	operation_count;
 	size_t	iter;

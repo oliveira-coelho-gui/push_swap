@@ -11,9 +11,8 @@ LIBFT		:= $(addprefix $(LIBFT_DIR)/,$(LIB))
 INCLUDES	:= -I. -I./$(LIBFT_DIR)/includes
 
 SRC			:= push_swap.c validate_input.c validate_integer_input.c \
-			   operations1.c operations2.c compute_disorder.c \
-			   bubble_sort.c insertion_sort.c call_backs.c
-
+			   operations1.c operations2.c compute_disorder.c call_backs.c \
+			   bubble_sort.c insertion_sort.c selection_sort.c
 OBJ			:= $(SRC:.c=.o)
 
 all: $(LIBFT) $(NAME)

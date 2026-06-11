@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:28:48 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 09:58:12 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 19:04:16 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 typedef enum e_option
 {
-	UNSET = -1,
+	UNSET,
 	SIMPLE,
 	MEDIUM,
 	COMPLEX,
@@ -46,6 +46,30 @@ typedef struct s_stack
 	size_t	size;
 }	t_stack;
 
+typedef struct s_operations
+{
+	size_t	sa;
+	size_t	sb;
+	size_t	ss;
+	size_t	pa;
+	size_t	pb;
+	size_t	ra;
+	size_t	rb;
+	size_t	rr;
+	size_t	rra;
+	size_t	rrb;
+	size_t	rrr;
+}	t_operations;
+
+typedef struct	s_state
+{
+	float			disorder;
+	t_opt			option;
+	unsigned int	total_ops;
+	t_operations	move;
+
+}	t_state;
+
 int		validate_store_input(char **argv, t_opt *op, t_dlist **lst);
 int		valid_integer_input(char **argv, int i, t_dlist **lst);
 int		str_is_num(char *str);
@@ -57,10 +81,11 @@ int		rotate_both(t_dlist **dlst1, t_dlist **dlst2);
 int		reverse_rotate(t_dlist **dlst);
 int		reverse_rotate_both(t_dlist **dlst1, t_dlist **dlst2);
 float	compute_disorder(t_dlist *lst);
-size_t	bubble(t_dlist **a, t_dlist **b);
-size_t	insertion(t_dlist **a, t_dlist **b);
 int		greater_than(int *n1, int *n2);
 int		less_than(int *n1, int *n2);
 int		equals(int *n1, int *n2);
+size_t	bubble(t_dlist **a, t_dlist **b);
+size_t	insertion(t_dlist **a, t_dlist **b);
+size_t	selection(t_dlist **a, t_dlist **b);
 
 #endif
