@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 08:29:56 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/10 11:36:37 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:32:20 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ static int	duplicates(char **argv, int i, t_dlist **lst)
 	while (argv[i])
 	{
 		num = (int *)malloc(sizeof(int));
+		if (!num)
+		{
+			ft_dlist_clear(lst, &free);
+			return (1);
+		}
 		*num = ft_atoi(argv[i]);
 		if (!*lst || !ft_dlist_find(*lst, num, &equals))
 			ft_dlist_push_back(lst, num);

@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:06:32 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 10:07:02 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:31:52 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	main(int argc, char **argv)
 	t_stack	b;
 	t_opt	op;
 
+	a.head = NULL;
 	if (argc == 1 || !validate_store_input(argv, &op, &a.head))
 		return (0);
 	a.tail = ft_dlist_last(a.head);
@@ -65,9 +66,9 @@ int	main(int argc, char **argv)
 	test_sorting(&a.head, &b.head, &bubble);
 	ft_dlist_clear(&a.head, &free);
 
-	ft_printf("\n\t-- INSERTION SORT --\n");
-	a.head = ft_dlist_dup(a_cpy);
-	test_sorting(&a.head, &b.head, &insertion);
+//	ft_printf("\n\t-- INSERTION SORT --\n");
+//	a.head = ft_dlist_dup(a_cpy);
+//	test_sorting(&a.head, &b.head, &insertion);
 	ft_dlist_clear(&a_cpy, &free);
 
 	ft_dlist_clear(&a.head, &free);
@@ -79,19 +80,19 @@ static void	test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, \
 {
 	size_t	operations_count;
 	float	disorder;
-	t_dlist	*tmp;
+	//t_dlist	*tmp;
 
 	operations_count = f(a, b);
 	disorder = compute_disorder(*a);
 	ft_printf("Sorted Disorder: %f\nNumber of operations: %d\n\n", \
 			disorder, (int)operations_count);
-	ft_printf("Sorted List: ");
+	//ft_printf("Sorted List: ");
 
-	tmp = *a;
-	while (tmp)
-	{
-		ft_printf("%i ", *((int *)tmp->data));
-		tmp = tmp->next;
-	}
+	//tmp = *a;
+	//while (tmp)
+	//{
+	//	ft_printf("%i ", *((int *)tmp->data));
+	//	tmp = tmp->next;
+	//}
 	ft_printf("\n");
 }
