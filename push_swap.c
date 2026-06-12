@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:06:32 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/12 16:38:05 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/12 17:10:43 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	//moves = NULL;
 	//if (op.bench == BENCH)
 
-	float disorder = disorder = compute_disorder(a.head);
+	//float disorder = disorder = compute_disorder(a.head);
 
 	//ft_printf("\t-- BUBBLE SORT --\n");
 	//a_cpy = ft_dlist_dup(a.head);
@@ -84,7 +84,7 @@ int	main(int argc, char **argv)
 	//if (op.bench == BENCH)
 	//	ft_printf("Input Disorder: %f\n\n", disorder);
 
-	ft_printf("%f\n", disorder);
+	//ft_printf("%f\n", disorder);
 	//ft_dlist_clear(&a_cpy, &free);
 	return (0);
 }

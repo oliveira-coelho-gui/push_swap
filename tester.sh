@@ -12,11 +12,7 @@ NC='\033[0m'
 # ==========================================
 # Validação do ambiente
 # ==========================================
-if [ ! -f "./push_swap" ]; then
-    echo -e "${RED}Erro: O executável ./push_swap não foi encontrado.${NC}"
-    echo "Compile o projeto antes de rodar o tester."
-    exit 1
-fi
+make 
 
 # Se você tiver o checker, mude para true e ajuste o nome do binário
 USE_CHECKER=true
