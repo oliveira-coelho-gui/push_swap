@@ -97,4 +97,6 @@ tests/operations/reverse_rotate/test_reverse_rotate.o: tests/operations/reverse_
 test_reverse_rotate: tests/operations/reverse_rotate/test_reverse_rotate.o validate_integer_input.o validate_input.o operations1.o operations2.o call_backs.o
 	@$(CC) $(SANITIZE) $^ -L./$(LIBFT_DIR) -lft -o $@
 
+alg:
+
 .PHONY: all clean fclean re t rt norminette swap swap2 push rotate

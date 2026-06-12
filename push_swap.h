@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:28:48 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 19:04:16 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 22:23:01 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,21 @@ typedef struct s_stack
 	size_t	size;
 }	t_stack;
 
+typedef enum e_op
+{
+	SA,
+	SB,
+	SS,
+	PA,
+	PB,
+	RA,
+	RB,
+	RR,
+	RRA,
+	RRB,
+	RRR
+}	t_op;
+
 typedef struct s_operations
 {
 	size_t	sa;
@@ -73,12 +88,12 @@ typedef struct	s_state
 int		validate_store_input(char **argv, t_opt *op, t_dlist **lst);
 int		valid_integer_input(char **argv, int i, t_dlist **lst);
 int		str_is_num(char *str);
-int		swap(t_dlist **stack);
+int		swap(t_dlist **stack, int c);
 int		swap_both(t_dlist **stack1, t_dlist **stack2);
-int		push(t_dlist **dest, t_dlist **src);
-int		rotate(t_dlist **dlst);
+int		push(t_dlist **dest, t_dlist **src, int c);
+int		rotate(t_dlist **dlst, int c);
 int		rotate_both(t_dlist **dlst1, t_dlist **dlst2);
-int		reverse_rotate(t_dlist **dlst);
+int		reverse_rotate(t_dlist **dlst, int c);
 int		reverse_rotate_both(t_dlist **dlst1, t_dlist **dlst2);
 float	compute_disorder(t_dlist *lst);
 int		greater_than(int *n1, int *n2);

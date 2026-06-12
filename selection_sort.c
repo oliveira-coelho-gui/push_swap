@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 19:52:46 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 19:53:29 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 22:25:08 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ size_t	selection(t_dlist **a, t_dlist **b)
 								&smallest, less_than))->data);
 			i = ft_dlist_find_index(*a, &smallest, equals);
 			while (i--)
-				operation_count += rotate(a);
-			operation_count += push(b, a);
+				operation_count += rotate(a, 'a');
+			operation_count += push(b, a, 'b');
 		}
 		while (*b)
-			operation_count += push(a, b);
+			operation_count += push(a, b, 'a');
 	}
 	return (operation_count);
 }

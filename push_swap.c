@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:06:32 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 19:48:08 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 23:21:44 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,10 @@ static void	test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, \
 int	main(int argc, char **argv)
 {
 	t_stack	a;
-	t_dlist	*a_cpy;
+	//t_dlist	*a_cpy;
 	t_stack	b;
 	t_opt	op;
+	//t_list	*moves;
 
 	a.head = NULL;
 	if (argc == 1 || !validate_store_input(argv, &op, &a.head))
@@ -58,46 +59,48 @@ int	main(int argc, char **argv)
 	b.tail = NULL;
 	b.size = 0;
 
-	float	disorder = compute_disorder(a.head);
-	ft_printf("Input Disorder: %f\n\n", disorder);
+	//moves = NULL;
+	//float	disorder = compute_disorder(a.head);
+	//ft_printf("Input Disorder: %f\n\n", disorder);
 
-	ft_printf("\t-- BUBBLE SORT --\n");
-	a_cpy = ft_dlist_dup(a.head);
-	test_sorting(&a.head, &b.head, &bubble);
+	//ft_printf("\t-- BUBBLE SORT --\n");
+	//a_cpy = ft_dlist_dup(a.head);
+	if (op.strategy == SIMPLE)
+		test_sorting(&a.head, &b.head, &bubble);
+	//ft_dlist_clear(&a.head, &free);
+
+	//ft_printf("\n\t-- INSERTION SORT --\n");
+	//a.head = ft_dlist_dup(a_cpy);
+	else if (op.strategy == MEDIUM)
+		test_sorting(&a.head, &b.head, &insertion);
+	//ft_dlist_clear(&a.head, &free);
+
+	//ft_printf("\n\t-- SELECTION SORT --\n");
+	//a.head = ft_dlist_dup(a_cpy);
+	else
+		test_sorting(&a.head, &b.head, &selection);
 	ft_dlist_clear(&a.head, &free);
 
-	ft_printf("\n\t-- INSERTION SORT --\n");
-	a.head = ft_dlist_dup(a_cpy);
-	test_sorting(&a.head, &b.head, &insertion);
-	ft_dlist_clear(&a.head, &free);
-
-	ft_printf("\n\t-- SELECTION SORT --\n");
-	a.head = ft_dlist_dup(a_cpy);
-	test_sorting(&a.head, &b.head, &selection);
-	ft_dlist_clear(&a.head, &free);
-
-	ft_dlist_clear(&a_cpy, &free);
+	//ft_dlist_clear(&a_cpy, &free);
 	return (0);
 }
 
-static void	test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, \
-			t_dlist **))
+static void	test_sorting(t_dlist **a, t_dlist **b, size_t (*f)(t_dlist **, t_dlist **))
 {
-	size_t	operations_count;
-	float	disorder;
-	t_dlist	*tmp;
+	//size_t	operations_count;
+	//float	disorder;
+	//t_dlist	*tmp;
 
-	operations_count = f(a, b);
-	disorder = compute_disorder(*a);
-	ft_printf("Sorted Disorder: %f\nNumber of operations: %d\n\n", \
-			disorder, (int)operations_count);
-	ft_printf("Sorted List: ");
+	f(a, b);
+	//disorder = compute_disorder(*a);
+	//ft_printf("Sorted Disorder: %f\nNumber of operations: %d\n\n", disorder, (int)operations_count);
+	//ft_printf("Sorted List: ");
 
-	tmp = *a;
-	while (tmp)
-	{
-		ft_printf("%i ", *((int *)tmp->data));
-		tmp = tmp->next;
-	}
-	ft_printf("\n");
+	//tmp = *a;
+	//while (tmp)
+	//{
+	//	ft_printf("%i ", *((int *)tmp->data));
+	//	tmp = tmp->next;
+	//}
+	//ft_printf("\n");
 }

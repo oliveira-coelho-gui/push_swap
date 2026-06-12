@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 19:24:09 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 19:54:08 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/11 23:02:56 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	bubble(t_dlist **a, t_dlist **b)
 
 	lst_size = ft_dlist_size(*a);
 	operation_count = 0;
-	iter = 1;
+	iter = 0;
 	while (compute_disorder(*a) > 0.00001f)
 	{
 		operation_count += regular_bubble(a, b, lst_size, &iter);
@@ -50,9 +50,9 @@ static size_t	regular_bubble(t_dlist **a, t_dlist **b, \
 					*((int *)(*b)->data) < *((int *)(*b)->next->data))
 				operation_count += swap_both(a, b);
 			else
-				operation_count += swap(a);
+				operation_count += swap(a, 'a');
 		}
-		operation_count += push(b, a);
+		operation_count += push(b, a, 'b');
 		iter++;
 	}
 	(*i)++;
@@ -75,12 +75,12 @@ static size_t	reverse_bubble(t_dlist **a, t_dlist **b, \
 					*((int *)(*a)->data) > *((int *)(*a)->next->data))
 				operation_count += swap_both(a, b);
 			else
-				operation_count += swap(b);
+				operation_count += swap(b, 'b');
 		}
-		operation_count += push(a, b);
+		operation_count += push(a, b, 'a');
 		iter++;
 	}
-	operation_count += push(a, b);
+	operation_count += push(a, b, 'a');
 	(*i)++;
 	return (operation_count);
 }
