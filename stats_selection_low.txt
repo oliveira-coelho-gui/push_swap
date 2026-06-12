@@ -1,0 +1,59 @@
+[0;34mIniciando Bateria de Testes do Push_swap[0m
+==========================================
+
+[0;33m>>> Testando Tamanho: 10 elementos <<<[0m
+Desordem     | Operações  |
+---------------------------
+0.0          | 0          |
+0.05         | 23         |
+0.1          | 22         |
+0.15         | 29         |
+0.2          | 26         |
+
+[0;33m>>> Testando Tamanho: 100 elementos <<<[0m
+Desordem     | Operações  |
+---------------------------
+0.0          | 0          |
+0.05         | 714        |
+0.1          | 1006       |
+0.15         | 1091       |
+0.2          | 1582       |
+
+[0;33m>>> Testando Tamanho: 200 elementos <<<[0m
+Desordem     | Operações  |
+---------------------------
+0.0          | 0          |
+0.05         | 1866       |
+0.1          | 3157       |
+0.15         | 4622       |
+0.2          | 4700       |
+
+[0;33m>>> Testando Tamanho: 400 elementos <<<[0m
+Desordem     | Operações  |
+---------------------------
+0.0          | 0          |
+0.05         | 6256       |
+0.1          | 10120      |
+0.15         | 14123      |
+0.2          | 15480      |
+
+[0;33m>>> Testando Tamanho: 500 elementos <<<[0m
+Desordem     | Operações  |
+---------------------------
+0.0          | 0          |
+0.05         | 8570       |
+0.1          | 14766      |
+0.15         | 19465      |
+0.2          | 29351      |
+
+[0;33m>>> Testando Tamanho: 800 elementos <<<[0m
+Desordem     | Operações  |
+---------------------------
+0.0          | 0          |
+0.05         | 20333      |
+0.1          | 36405      |
+0.15         | 49100      |
+0.2          | 65119      |
+
+[0;34mLimpando arquivos temporários...[0m
+Testes concluídos.

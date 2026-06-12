@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:28:48 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 22:23:01 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/12 13:48:30 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,10 +95,11 @@ int		rotate(t_dlist **dlst, int c);
 int		rotate_both(t_dlist **dlst1, t_dlist **dlst2);
 int		reverse_rotate(t_dlist **dlst, int c);
 int		reverse_rotate_both(t_dlist **dlst1, t_dlist **dlst2);
-float	compute_disorder(t_dlist *lst);
+double	compute_disorder(t_dlist *lst);
 int		greater_than(int *n1, int *n2);
 int		less_than(int *n1, int *n2);
 int		equals(int *n1, int *n2);
+int		is_sorted(t_dlist *lst);
 size_t	bubble(t_dlist **a, t_dlist **b);
 size_t	insertion(t_dlist **a, t_dlist **b);
 size_t	selection(t_dlist **a, t_dlist **b);

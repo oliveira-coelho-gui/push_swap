@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 08:06:32 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 23:21:44 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/12 16:38:05 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ int	main(int argc, char **argv)
 	//t_dlist	*a_cpy;
 	t_stack	b;
 	t_opt	op;
+
+
+
 	//t_list	*moves;
 
 	a.head = NULL;
@@ -58,29 +61,30 @@ int	main(int argc, char **argv)
 	b.head = NULL;
 	b.tail = NULL;
 	b.size = 0;
-
 	//moves = NULL;
-	//float	disorder = compute_disorder(a.head);
-	//ft_printf("Input Disorder: %f\n\n", disorder);
+	//if (op.bench == BENCH)
+
+	float disorder = disorder = compute_disorder(a.head);
 
 	//ft_printf("\t-- BUBBLE SORT --\n");
 	//a_cpy = ft_dlist_dup(a.head);
-	if (op.strategy == SIMPLE)
-		test_sorting(&a.head, &b.head, &bubble);
+	test_sorting(&a.head, &b.head, &bubble);
 	//ft_dlist_clear(&a.head, &free);
 
 	//ft_printf("\n\t-- INSERTION SORT --\n");
 	//a.head = ft_dlist_dup(a_cpy);
-	else if (op.strategy == MEDIUM)
-		test_sorting(&a.head, &b.head, &insertion);
+	//test_sorting(&a.head, &b.head, &insertion);
 	//ft_dlist_clear(&a.head, &free);
 
 	//ft_printf("\n\t-- SELECTION SORT --\n");
 	//a.head = ft_dlist_dup(a_cpy);
-	else
-		test_sorting(&a.head, &b.head, &selection);
+	//test_sorting(&a.head, &b.head, &selection);
 	ft_dlist_clear(&a.head, &free);
 
+	//if (op.bench == BENCH)
+	//	ft_printf("Input Disorder: %f\n\n", disorder);
+
+	ft_printf("%f\n", disorder);
 	//ft_dlist_clear(&a_cpy, &free);
 	return (0);
 }

@@ -6,81 +6,53 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 19:24:09 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 23:02:56 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/12 13:57:14 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static size_t	regular_bubble(t_dlist **a, t_dlist **b, \
-		size_t size, size_t *i);
-static size_t	reverse_bubble(t_dlist **a, t_dlist **b, \
-		size_t size, size_t *i);
+static size_t	regular_bubble(t_dlist **a, t_dlist **b);
+static size_t	reverse_bubble(t_dlist **a, t_dlist **b);
 
 size_t	bubble(t_dlist **a, t_dlist **b)
 {
 	size_t	operation_count;
-	size_t	lst_size;
-	size_t	iter;
 
-	lst_size = ft_dlist_size(*a);
 	operation_count = 0;
-	iter = 0;
-	while (compute_disorder(*a) > 0.00001f)
+	while (!is_sorted(*a))
 	{
-		operation_count += regular_bubble(a, b, lst_size, &iter);
-		operation_count += reverse_bubble(a, b, lst_size, &iter);
+		operation_count += regular_bubble(a, b);
+		operation_count += reverse_bubble(a, b);
 	}
 	return (operation_count);
 }
 
-static size_t	regular_bubble(t_dlist **a, t_dlist **b, \
-		size_t size, size_t *i)
+static size_t	regular_bubble(t_dlist **a, t_dlist **b)
 {
 	size_t	operation_count;
-	size_t	iter;
 
 	operation_count = 0;
-	iter = 0;
-	while ((*a)->next && iter < size - *i)
+	while ((*a)->next)
 	{
 		if (*((int *)(*a)->data) > *((int *)(*a)->next->data))
-		{
-			if ((*b) && (*b)->next && \
-					*((int *)(*b)->data) < *((int *)(*b)->next->data))
-				operation_count += swap_both(a, b);
-			else
-				operation_count += swap(a, 'a');
-		}
+			operation_count += swap(a, 'a');
 		operation_count += push(b, a, 'b');
-		iter++;
 	}
-	(*i)++;
 	return (operation_count);
 }
 
-static size_t	reverse_bubble(t_dlist **a, t_dlist **b, \
-		size_t size, size_t *i)
+static size_t	reverse_bubble(t_dlist **a, t_dlist **b)
 {
 	size_t	operation_count;
-	size_t	iter;
 
 	operation_count = 0;
-	iter = 0;
-	while ((*b)->next && iter < size - *i)
+	while ((*b)->next)
 	{
 		if (*((int *)(*b)->data) < *((int *)(*b)->next->data))
-		{
-			if ((*a) && (*a)->next && \
-					*((int *)(*a)->data) > *((int *)(*a)->next->data))
-				operation_count += swap_both(a, b);
-			else
-				operation_count += swap(b, 'b');
-		}
+			operation_count += swap(b, 'b');
 		operation_count += push(a, b, 'a');
-		iter++;
 	}
 	operation_count += push(a, b, 'a');
-	(*i)++;
 	return (operation_count);
 }

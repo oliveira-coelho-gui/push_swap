@@ -6,13 +6,13 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 18:04:50 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/10 14:53:41 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/12 11:39:34 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float	compute_disorder(t_dlist *lst)
+double	compute_disorder(t_dlist *lst)
 {
 	int		mistakes;
 	int		total_pairs;

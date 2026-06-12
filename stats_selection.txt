@@ -1,0 +1,67 @@
+SELECTION SORTE STATISTICS:
+
+[0;34mIniciando Bateria de Testes do Push_swap[0m
+==========================================
+
+[0;33m>>> Testando Tamanho: 10 elementos <<<[0m
+Desordem     | Operações  | Status              | Checker   
+---------------------------------------------------------
+0.0          | 0          | [0;32mOK[0m                  | N/A                            
+0.2          | 39         | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.4          | 45         | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.6          | 46         | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.8          | 43         | [0;32mOK[0m                  | [0;32mOK[0m                  
+1.0          | 65         | [0;32mOK[0m                  | [0;32mOK[0m                  
+
+[0;33m>>> Testando Tamanho: 100 elementos <<<[0m
+Desordem     | Operações  | Status              | Checker   
+---------------------------------------------------------
+0.0          | 0          | [0;32mEXCELLENT (<700)[0m    | N/A                            
+0.2          | 1608       | [0;33mPASS (<2000)[0m        | [0;32mOK[0m                  
+0.4          | 2324       | [0;31mFAIL (>2000)[0m        | [0;32mOK[0m                  
+0.6          | 2532       | [0;31mFAIL (>2000)[0m        | [0;32mOK[0m                  
+0.8          | 3482       | [0;31mFAIL (>2000)[0m        | [0;32mOK[0m                  
+1.0          | 5150       | [0;31mFAIL (>2000)[0m        | [0;32mOK[0m                  
+
+[0;33m>>> Testando Tamanho: 200 elementos <<<[0m
+Desordem     | Operações  | Status              | Checker   
+---------------------------------------------------------
+0.0          | 0          | [0;32mOK[0m                  | N/A                            
+0.2          | 4180       | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.4          | 7932       | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.6          | 10312      | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.8          | 13654      | [0;32mOK[0m                  | [0;32mOK[0m                  
+1.0          | 20300      | [0;32mOK[0m                  | [0;32mOK[0m                  
+
+[0;33m>>> Testando Tamanho: 400 elementos <<<[0m
+Desordem     | Operações  | Status              | Checker   
+---------------------------------------------------------
+0.0          | 0          | [0;32mOK[0m                  | N/A                            
+0.2          | 17114      | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.4          | 33912      | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.6          | 40895      | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.8          | 52685      | [0;32mOK[0m                  | [0;32mOK[0m                  
+1.0          | 80600      | [0;32mOK[0m                  | [0;32mOK[0m                  
+
+[0;33m>>> Testando Tamanho: 500 elementos <<<[0m
+Desordem     | Operações  | Status              | Checker   
+---------------------------------------------------------
+0.0          | 0          | [0;32mEXCELLENT (<5500)[0m   | N/A                            
+0.2          | 25390      | [0;31mFAIL (>12000)[0m       | [0;32mOK[0m                  
+0.4          | 52800      | [0;31mFAIL (>12000)[0m       | [0;32mOK[0m                  
+0.6          | 63985      | [0;31mFAIL (>12000)[0m       | [0;32mOK[0m                  
+0.8          | 82399      | [0;31mFAIL (>12000)[0m       | [0;32mOK[0m                  
+1.0          | 125750     | [0;31mFAIL (>12000)[0m       | [0;32mOK[0m                  
+
+[0;33m>>> Testando Tamanho: 800 elementos <<<[0m
+Desordem     | Operações  | Status              | Checker   
+---------------------------------------------------------
+0.0          | 0          | [0;32mOK[0m                  | N/A                            
+0.2          | 61065      | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.4          | 131515     | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.6          | 164012     | [0;32mOK[0m                  | [0;32mOK[0m                  
+0.8          | 203649     | [0;32mOK[0m                  | [0;32mOK[0m                  
+1.0          | 321200     | [0;32mOK[0m                  | [0;32mOK[0m                  
+
+[0;34mLimpando arquivos temporários...[0m
+Testes concluídos.

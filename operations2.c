@@ -6,7 +6,7 @@
 /*   By: gucoelho <gucoelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 07:30:18 by gucoelho          #+#    #+#             */
-/*   Updated: 2026/06/11 22:38:44 by gucoelho         ###   ########.fr       */
+/*   Updated: 2026/06/12 11:34:26 by gucoelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	rotate(t_dlist **dlst, int c)
 		ft_dlist_push_back_elem(dlst, first);
 	}
 	if (c == -1)
-		ft_printf("r", c);
+		ft_printf("r");
 	else
 		ft_printf("r%c\n", c);
 	return (1);
@@ -46,7 +46,7 @@ int	reverse_rotate(t_dlist **dlst, int c)
 		ft_dlist_push_front_elem(dlst, last);
 	}
 	if (c == -1)
-		ft_printf("r", c);
+		ft_printf("r");
 	else
 		ft_printf("rr%c\n", c);
 	return (1);
